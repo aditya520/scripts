@@ -54,6 +54,10 @@ runs:
       shell: bash
       run: poetry run brownie networks import network-config.yaml True
 
+    - name: Import Tenderly Devnet
+      shell: bash
+      run: poetry run brownie networks add Live id=tenderly-mainnet-devnet-test host=https://rpc.vnet.tenderly.co/devnet/test-lido/edccf5ed-7c16-4469-8649-54db6dd49dba chainid=1
+
     - name: Show system info
       shell: bash
       run: |
@@ -73,7 +77,7 @@ runs:
       shell: bash
       run: >
         poetry run
-        brownie test -s --network mainnet-fork
+        brownie test -s --network tenderly-mainnet-devnet-test
       env:
         WEB3_INFURA_PROJECT_ID: ${{ inputs.infura }}
         ETHERSCAN_TOKEN: ${{ inputs.etherscan }}

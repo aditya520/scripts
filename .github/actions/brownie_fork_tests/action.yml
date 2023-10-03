@@ -9,11 +9,11 @@ inputs:
   infura:
     description: "infura JSON-RPC provider"
     required: true
-    default: ""
+    default: "5cecbb4235184518b3acfb97e90b3c5d"
   etherscan:
     description: "etherscan api key"
     required: true
-    default: ""
+    default: "6SZ4SX4GZ2W922E9UZC5YVZ7AZMKJ2YDEA"
 
 runs:
   using: "composite"
